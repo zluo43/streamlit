@@ -5,3 +5,4 @@ pydeck==0.9.1
 shapely==2.0.1
 streamlit==1.36.0
 ijson==3.3.0
+streamlit-lottie==0.0.5
