@@ -215,13 +215,13 @@ def execute_duckdb_select_query(sanitized_name, db_path='hong_kong_data.duckdb')
         result = con.execute(query).df()  
         #Need a gdf as well for pydeck geojson layer? 
         result['geometry'] = result['wkt_geom'].apply(wkt.loads)
-        gdf= gpd.GeoDataFrame(result, geometry='geometry')
+        #gdf= gpd.GeoDataFrame(result, geometry='geometry')
         con.close()
         return result
     except Exception as e:
         con.close()
         st.error(f"❌ Error executing SELECT query: {e}")
-        return pd.DataFrame()  # Return empty DataFrame on error
+        return   # Return empty DataFrame on error
     
 @st.cache_data
 def gdf_create(result_df):
@@ -310,7 +310,7 @@ def main():
                
                 with st.expander("Expand to see the data"):
                       st.write(f"#### {len(result_df)} Records Extracted")
-                      st.dataframe(result_df.drop(columns=['wkt_geom']))
+                      st.dataframe(result_df.drop(columns=['wkt_geom','geometry']))
 
                 
                 with st.container():
