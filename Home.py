@@ -146,6 +146,22 @@ with st.container():
         """<a href="/map" target="_self"><em>🔗 View Interactive Hong Kong Housing Map</em></a>""",
         unsafe_allow_html=True
     )
+    # Javascript Portfolio Site Section with Expander
+    st.subheader('💻 Javascript Portfolio Site')
+    st.write("""
+    Discover my work in front-end development using Javascript, including dynamic web applications and interactive visualizations.
+    """)
+
+    with st.expander('🛠️ Explore Javascript Projects'):
+        st.write("""
+        You can explore my Javascript projects hosted on my portfolio site below:
+        """)
+        st.markdown(
+            """<a href="https://portfoliosite-production-ca19.up.railway.app/" target="_blank"><em>🔗 Visit My Javascript Portfolio Site</em></a>""",
+            unsafe_allow_html=True
+        )
+        st.write("(Click on the link to view my Javascript projects and web applications.)")
+
 
 
 
