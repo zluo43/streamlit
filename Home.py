@@ -143,7 +143,11 @@ with st.container():
     For a more interactive experience, explore my interactive map series:
     """)
     st.markdown(
-        """<a href="/map" target="_self"><em>🔗 View Interactive Hong Kong Housing Map</em></a>""",
+        """<a href="/Hongkong_housing" target="_self"><em>🔗 View Interactive Hong Kong Housing Map</em></a>""",
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        """<a href="/hk_711" target="_self"><em>🔗 View Interactive Hong Kong 7-11 Stores Map</em></a>""",
         unsafe_allow_html=True
     )
     # Javascript Portfolio Site Section with Expander
