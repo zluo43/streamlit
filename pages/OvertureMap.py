@@ -4,7 +4,6 @@ import duckdb
 import pandas as pd
 import pydeck as pdk
 import geopandas as gpd
-from lonboard import viz 
 import requests
 import json 
 def connect_to_duckdb():
