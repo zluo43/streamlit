@@ -6,7 +6,7 @@
 /* Style hyperlinks*/
 a{
   display: block; 
-  color:#2e9aff !important;
+  
   font-weight: bold;
 }
 
@@ -57,7 +57,7 @@ header {visibility: hidden;}
 
 /* Design Hyperlink */
 a:link , a:visited{
-color: blue;
+/* color: blue; */
 text-decoration: underline;
 }
 

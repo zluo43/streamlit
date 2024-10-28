@@ -39,7 +39,7 @@ info = {
     "Name": "Calvin",
     "Full_Name": "Calvin Luo",
     "Intro": "Welcome to my portfolio!",
-    "About": "Hey everyone, thanks for stopping by! I'm a GISer with passion in geospatial analytics, geospatial data engineering/visualization, and interactive web mapping. This portfolio page will showcase some of the works I have done.",
+    "About": "Hey everyone, thanks for stopping by! I'm a GISer with passion in geospatial data analytics, data engineering, visualization, and interactive web mapping.",
     "Photo": "<img src='images/profile.jpeg' width='200' />",
     "Medium": "https://medium.com/@yourusername",
     "Email": "calvinluozhengpei@gmail.com",
@@ -120,6 +120,22 @@ with st.container():
 
 # ----------------- GIS Portfolio Section ----------------- #
 
+#Container function
+
+def boxy_container(bg_color, content):
+    st.markdown(f'''
+    <div style="
+        background-color: {bg_color};
+        padding: 20px;
+        border-radius: 8px;
+        color: white;
+        margin-top: 20px;
+    ">
+        {content}
+    </div>
+    ''', unsafe_allow_html=True)
+
+
 with st.container():
     st.subheader('🌐 GIS Portfolio')
     st.write("""
@@ -143,13 +159,18 @@ with st.container():
     For a more interactive experience, explore my interactive map series:
     """)
     st.markdown(
-        """<a href="/Hongkong_housing" target="_self"><em>🔗 View Interactive Hong Kong Housing Map</em></a>""",
+        """<a href="/Hongkong_Real_Estate" target="_self"><em>🔗 View Interactive Hong Kong Housing Map</em></a>""",
         unsafe_allow_html=True
     )
     st.markdown(
-        """<a href="/hk_711" target="_self"><em>🔗 View Interactive Hong Kong 7-11 Stores Map</em></a>""",
+        """<a href="/OvertureMap" target="_self"><em>🔗 Search All Real-World Entities Sourced By The Overture Places Data</em></a>""",
         unsafe_allow_html=True
     )
+    st.markdown(
+        """<a href="/SevenEleven" target="_self"><em>🔗 View Interactive Hong Kong 7-11 Stores Map</em></a>""",
+        unsafe_allow_html=True
+    )
+    
     # Javascript Portfolio Site Section with Expander
     st.subheader('💻 Javascript Portfolio Site')
     st.write("""

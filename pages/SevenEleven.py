@@ -36,7 +36,7 @@ def main():
              Overview:
              This application visualizes the locations of convenience stores in Hong Kong. Currently, it only supports **7-Eleven**.
              The addresses are obtained via scrapped the official 7-11 Hongkong website and converted to coordinates via Nominatim geocoding service API.
-             There are roughly 1100 7-11 in Hongkong but my code only catches 657 valid coordinates.
+             There are roughly 1100 Seven-Eleven in Hongkong but my code only catches 657 valid coordinates.
              Isochrones are generated via Vahalla to provide a very general idea of how close each 711 store is in Hongkong.
              Please refer to the repository for specific code.
              More analysis is coming!

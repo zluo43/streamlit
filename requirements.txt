@@ -1,6 +1,6 @@
 duckdb==1.1.1
 geopandas==1.0.1
-pandas==1.5.3
+pandas==2.2.3
 pydeck==0.9.1
 shapely==2.0.1
 streamlit==1.36.0
@@ -10,3 +10,5 @@ numpy==1.23.5
 shapely==2.0.1
 pyproj==3.5.0
 fiona==1.9.2
+json==2.0.9
+requests=2.31.0
