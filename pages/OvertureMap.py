@@ -85,7 +85,7 @@ def main():
         # Create a text input for category search
         user_category = st.text_input(
             "Enter a place category:",
-            placeholder="e.g., restaurant, cafe, shop",
+            placeholder="Copy a category from the above",
             help="Copy a category from the list above or type your own keyword"
         )
         
@@ -121,6 +121,7 @@ def main():
         if country:
             bounding_box = get_country_bounding_box(country)
             
+            
             if bounding_box and len(bounding_box) == 4:
                 min_y, max_y, min_x, max_x = bounding_box
                 valid_bounding_box = True
@@ -139,6 +140,8 @@ def main():
             """
             st.info(f"🔍 Generating the map for you!")
             df_overture=con.sql(query).df()
+            df_overture['name_value'] = df_overture['names'].apply(lambda x: x['primary'])
+            #st.dataframe(df_overture)
 
             layer = pdk.Layer(
                 "ScatterplotLayer",
@@ -162,7 +165,7 @@ def main():
                 pitch=0
             )
             tooltip = {
-                "html": "<b>Name:</b> {names}",
+                "html": "<b>Name:</b>{name_value}",
                 "style": {
                     "backgroundColor": "steelblue",
                     "color": "white"
