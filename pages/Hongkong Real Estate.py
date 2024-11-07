@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 from shapely import wkt
 import pydeck  as pdk
-print (duckdb.__version__)
+
 
 def is_geojson_empty(file_path):
     """
