@@ -163,7 +163,7 @@ with st.container():
         unsafe_allow_html=True
     )
     st.markdown(
-        """<a href="/OvertureMap" target="_self"><em>🔗 Search All Real-World Entities Sourced By The Overture Places Data</em></a>""",
+        """<a href="/OvertureMap_POI" target="_self"><em>🔗 Search All Real-World Entities Sourced By The Overture Places Data</em></a>""",
         unsafe_allow_html=True
     )
     st.markdown(
@@ -171,7 +171,7 @@ with st.container():
         unsafe_allow_html=True
     )
     st.markdown(
-        """<a href="/Hongkong_Population_Distribution" target="_self"><em>🔗 View HongKong Population Distribution in H3 Gridp</em></a>""",
+        """<a href="/Hongkong_Population_Distribution" target="_self"><em>🔗 View HongKong Population Distribution in H3 Grid</em></a>""",
         unsafe_allow_html=True
     )
     
