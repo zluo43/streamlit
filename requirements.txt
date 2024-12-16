@@ -3,7 +3,7 @@ geopandas==1.0.1
 pandas==2.2.3
 pydeck==0.9.1
 shapely==2.0.1
-streamlit==1.36.0
+streamlit==1.41.0
 ijson==3.3.0
 streamlit-lottie==0.0.5
 numpy==1.23.5

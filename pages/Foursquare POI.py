@@ -8,7 +8,7 @@ import requests
 import json 
 
 
-def connect_to_duckdb():
+def connect_to_duckdb(db_path ='data/coffee.db'):
     """
     Connect to the DuckDB database and load the spatial extension.
     Parameters:
@@ -16,7 +16,7 @@ def connect_to_duckdb():
     Returns:
     - DuckDB connection object.
     """
-    con=duckdb.connect(database='data/coffee.duckdb')
+    con=duckdb.connect(database=db_path,read_only=False)
     con.execute("INSTALL spatial;")
     con.execute("LOAD spatial;")
     return con
@@ -27,10 +27,11 @@ def main():
 
     #Duckdb conneect
     con=connect_to_duckdb()
-    con.sql("""SHOW TABLES""")
-    #df=con.sql("""SELECT name,latitude,longitude FROM fsq_coffee """).df()
-
+    
+    
+    df=con.sql("""SELECT name,longitude,latitude FROM fsq_coffee""").df()
     st.set_page_config(layout="wide")
+    
     st.title("Explore Coffee Shops in Hong Kong Using Foursquare POI Dataset")
     st.write("""
              Overview:
@@ -75,7 +76,10 @@ def main():
                 tooltip=tooltip
             )
 
-    st.pydeck_chart(r)
+    
+    event = st.pydeck_chart(r, on_select="rerun", selection_mode="multi-object")
+
+    event.selection
 
 
 
