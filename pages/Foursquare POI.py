@@ -27,7 +27,8 @@ def main():
 
     #Duckdb conneect
     con=connect_to_duckdb()
-    df=con.sql("""SELECT name,latitude,longitude FROM fsq_coffee """).df()
+    con.sql("""SHOW TABLES""")
+    #df=con.sql("""SELECT name,latitude,longitude FROM fsq_coffee """).df()
 
     st.set_page_config(layout="wide")
     st.title("Explore Coffee Shops in Hong Kong Using Foursquare POI Dataset")
