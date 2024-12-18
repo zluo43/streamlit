@@ -174,6 +174,11 @@ with st.container():
         """<a href="/Hongkong_Population_Distribution" target="_self"><em>🔗 View HongKong Population Distribution in H3 Grid</em></a>""",
         unsafe_allow_html=True
     )
+
+    st.markdown(
+        """<a href="/Foursquare_POI" target="_self"><em>🔗 View HongKong Coffee Shops With Foursquare POI Data</em></a>""",
+        unsafe_allow_html=True
+    )
     
     # Javascript Portfolio Site Section with Expander
     st.subheader('💻 Javascript Portfolio Site')
