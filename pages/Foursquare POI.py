@@ -48,7 +48,7 @@ def main():
         """
     )
     st.markdown(
-        "<span style='color: #0066cc; font-weight: bold;'>Click on a point to see details about the coffee shop.</span>", 
+        "<span style='color: #0066cc; font-weight: bold;'>Click on a point to see details about the coffee shop and zoom in on map.</span>", 
         unsafe_allow_html=True
     )
 
