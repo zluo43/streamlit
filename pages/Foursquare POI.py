@@ -191,7 +191,7 @@ def main():
         st.session_state["events"] = {}
         st.session_state["selected_shop"] = None
         st.session_state["current_event_num"] = 1
-        st.experimental_rerun()
+        st.rerun()
 
 
 if __name__ == "__main__":
