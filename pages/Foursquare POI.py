@@ -109,10 +109,14 @@ def main():
         )
 
     # Figure out which event key we are dealing with
+    #current_event_key= event1,2,3...
     current_event_key = f"event{st.session_state['current_event_num']}"
+    print (current_event_key)
 
     # If we haven't created this "event" deck yet, do so
     if current_event_key not in st.session_state["events"]:
+        print ('true')
+        
         # For the first event, default citywide view
         if st.session_state["current_event_num"] == 1:
             st.session_state["events"][current_event_key] = create_deck(
@@ -121,6 +125,7 @@ def main():
                 zoom=10
             )
         else:
+            print ('came to the else')
             # Fallback or placeholder if an event somehow got created
             # without a specific lat/lon. (Right now it uses the same city view.)
             st.session_state["events"][current_event_key] = create_deck(
@@ -157,6 +162,7 @@ def main():
 
     # Check the current selection from the deck
     selection = current_deck.selection
+    print (selection)
     # Uncomment this if you want to see the raw selection in the UI:
     # st.write("Raw selection state:", selection)
 
@@ -165,7 +171,8 @@ def main():
         selection is not None
         and hasattr(selection, "objects")
         and "Coffee Shop" in selection.objects
-    ):
+    ):  
+        print ('here has a selection')
         # The first object in the "Coffee Shop" list
         obj = selection.objects["Coffee Shop"][0]
 
@@ -175,6 +182,7 @@ def main():
         # Create and store a new event (zoomed-in view) for the next run
         st.session_state["current_event_num"] += 1
         new_event_key = f"event{st.session_state['current_event_num']}"
+        print (f'at the end {new_event_key}')
 
         st.session_state["events"][new_event_key] = create_deck(
             latitude=obj["latitude"],
