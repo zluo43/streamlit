@@ -205,7 +205,7 @@ def main():
         density = total_length_km / area_km2
         with st.spinner('Calculating Street Density and Preparing New Maps...'):
             time.sleep(2)
-            st.write(f"**Pedastrian Street Density**: {density:.2f} km/km² within 1km radius")
+            st.write(f"**Selected Street Density**: {density:.2f} km/km² within 1km radius")
         street_layers = create_street_layers(nodes_gdf, edges_gdf)
         second_layers=[
                 pdk.Layer(
@@ -275,7 +275,7 @@ def main():
         col1, col2 = st.columns(2)
 
         with col1:
-            st.subheader("Pedastrian Street Network for Selected Airbnb")
+            st.subheader("Selected Street Network for Selected Airbnb")
             st.pydeck_chart(deck2)
 
         with col2:
