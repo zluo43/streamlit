@@ -100,7 +100,7 @@ def main():
     #print (con.sql("""SHOW TABLES"""))
 
     h3_df=con.sql("""SELECT * FROM airbnb""").df()
-    print (h3_df.head())
+    #print (h3_df.head())
 
     # Initialize session state for events
    
