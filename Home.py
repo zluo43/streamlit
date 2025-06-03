@@ -159,6 +159,10 @@ with st.container():
     For a more interactive experience, explore my interactive map series:
     """)
     st.markdown(
+        """<a href="/Citibike_Data_Dashboard" target="_self"><em>🔗 View NYC's Citi Bike Data Dashboard</em></a>""",
+        unsafe_allow_html=True
+    )
+    st.markdown(
         """<a href="/Airbnb_Street_Density_Map" target="_self"><em>🔗 View Street Density Near Airbnb Units</em></a>""",
         unsafe_allow_html=True
     )
