@@ -30,7 +30,7 @@ def load_citibike_data(con, year):
         return None
 
     main_table_name = f"citibike_data_{year}"
-    sample_table_name = f"citibike_sample_{year}_25percent"
+    sample_table_name = f"citibike_sample_{year}_12percent"
 
     try:
         st.info(f"Starting data load for {year}: Extracting data from Source Cooperative...Just a moment!")
@@ -44,11 +44,11 @@ def load_citibike_data(con, year):
         """
         con.execute(query_create_main_table)
 
-        st.info(f"Sampling 25% of the {year} data with Bernoulli...")
+        st.info(f"Sampling 12% of the {year} data with Bernoulli...")
         query_create_sample_table = f"""
         CREATE OR REPLACE TABLE {sample_table_name} AS
         SELECT * FROM {main_table_name}
-        USING SAMPLE 25% (BERNOULLI);
+        USING SAMPLE 12% (BERNOULLI);
         """
         con.execute(query_create_sample_table)
 
@@ -69,7 +69,7 @@ def display_top_start_stations_chart(db_connection, year):
         st.warning("Database connection is not available for top stations chart.")
         return
 
-    sample_table_name = f"citibike_sample_{year}_25percent"
+    sample_table_name = f"citibike_sample_{year}_12percent"
     st.header(f"Top 7 Most Popular Start Stations ({year} Sampled Data)")
     try:
         query_top_stations = f"""
@@ -103,7 +103,7 @@ def display_member_casual_pie_chart(db_connection, year):
         st.warning("Database connection is not available for member/casual pie chart.")
         return
 
-    sample_table_name = f"citibike_sample_{year}_25percent"
+    sample_table_name = f"citibike_sample_{year}_12percent"
     st.header(f"Rider Type Distribution ({year} Sampled Data)")
     try:
         query_member_casual = f"""
@@ -137,7 +137,7 @@ def display_hourly_trip_distribution(db_connection, year):
         st.warning("Database connection is not available for hourly trip distribution chart.")
         return
     
-    sample_table_name = f"citibike_sample_{year}_25percent"
+    sample_table_name = f"citibike_sample_{year}_12percent"
     st.header(f"Trip Distribution by Hour of the Day ({year} Sampled Data)")
     try:
         query_hourly_trips = f"""
