@@ -9,7 +9,7 @@ import plotly.express as px
 
 def connect_to_duckdb():
     """
-    Establishes a DuckDB in-memory connection and ensures 'httpfs' and 'spatial'
+    Establishes a DuckDB in-memory connection and ensures 'spatial'
     extensions are loaded.
     """
     try:
@@ -29,25 +29,30 @@ def load_citibike_data(con, year):
     if con is None:
         return None
 
-    main_table_name = f"citibike_data_{year}"
+    #main_table_name = f"citibike_data_{year}"
     sample_table_name = f"citibike_sample_{year}_12percent"
 
     try:
         st.info(f"Starting data load for {year}: Extracting data from Source Cooperative...Just a moment!")
+        st.info(f"Sampling 12% of the {year} data with Bernoulli...")
         
-        query_create_main_table = f"""
-        CREATE OR REPLACE TABLE {main_table_name} AS
+        # query_create_main_table = f"""
+        # CREATE OR REPLACE TABLE {main_table_name} AS
+        # SELECT ride_id, rideable_type, started_at as start_time, ended_at as end_time, 
+        #        start_station_id, start_station_name, end_station_id, end_station_name, member_casual
+        # FROM read_parquet('s3://us-west-2.opendata.source.coop/zluo43/citibike/new_schema_combined_with_geom.parquet/**/*.parquet', hive_partitioning=1)
+        # WHERE year={year}
+        
+        # """
+        # con.execute(query_create_main_table)
+
+        
+        query_create_sample_table = f"""
+        CREATE OR REPLACE TABLE {sample_table_name} AS
         SELECT ride_id, rideable_type, started_at as start_time, ended_at as end_time, 
                start_station_id, start_station_name, end_station_id, end_station_name, member_casual
         FROM read_parquet('s3://us-west-2.opendata.source.coop/zluo43/citibike/new_schema_combined_with_geom.parquet/**/*.parquet', hive_partitioning=1)
-        WHERE year={year};
-        """
-        con.execute(query_create_main_table)
-
-        st.info(f"Sampling 12% of the {year} data with Bernoulli...")
-        query_create_sample_table = f"""
-        CREATE OR REPLACE TABLE {sample_table_name} AS
-        SELECT * FROM {main_table_name}
+        WHERE year={year}
         USING SAMPLE 12% (BERNOULLI);
         """
         con.execute(query_create_sample_table)
