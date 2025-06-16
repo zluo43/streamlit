@@ -43,7 +43,8 @@ info = {
     "Photo": "<img src='images/profile.jpeg' width='200' />",
     "Medium": "https://medium.com/@yourusername",
     "Email": "calvinluozhengpei@gmail.com",
-    "LinkedIn":"https://www.linkedin.com/in/zhengpei-luo-969787129"
+    "LinkedIn":"https://www.linkedin.com/in/zhengpei-luo-969787129",
+    "GitHub": "https://github.com/zluo43"
     
 }
 
@@ -264,4 +265,5 @@ with st.container():
 st.sidebar.markdown(f"""
 **Email**: [📧 {info['Email']}](mailto:{info['Email']})  
 **Linkedin**: [🔗Linkedin {info['LinkedIn']}](www.linkedin.com/in/zhengpei-luo-969787129)
+**GitHub**: [🔗GitHub {info['GitHub']}](https://github.com/zluo43)
 """)
