@@ -4,9 +4,10 @@ import pandas as pd
 # import pydeck as pdk # Not used in the provided relevant code
 # import numpy as np # Not used in the provided relevant code
 import plotly.express as px
+import datetime
 
 
-
+@st.cache_resource(ttl=datetime.timedelta(hours=1),max_entries=2)
 def connect_to_duckdb():
     """
     Establishes a DuckDB in-memory connection and ensures 'spatial'

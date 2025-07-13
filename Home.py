@@ -38,8 +38,8 @@ info = {
     "Pronoun": "He/Him",
     "Name": "Calvin",
     "Full_Name": "Calvin Luo",
-    "Intro": "Welcome to my portfolio!",
-    "About": "Hey everyone, thanks for stopping by! I'm a GISer with passion in geospatial data analytics, data engineering, visualization, and interactive web mapping.",
+    "Intro": "A passionate geospatial professional with a focus on geospatial data analytics, data engineering, visualization, and interactive web mapping.",
+    "About": "Hey everyone, thanks for stopping by! Please feel free to explore my site. If you are interested, make sure to cehck out the interactive maps I cerated here! Thank you all!",
     "Photo": "<img src='images/profile.jpeg' width='200' />",
     "Medium": "https://medium.com/@yourusername",
     "Email": "calvinluozhengpei@gmail.com",
@@ -142,7 +142,101 @@ with st.container():
     st.write("""
     Explore some of my GIS projects. Below, you will find links to my static GIS maps hosted on Google Sites and interactive maps created in Streamlit.
     """)
+    #new city edition try:
+    # --- INTERACTIVE MAPS SECTION WITH CARDS ---
+    st.subheader('🗺️ Interactive Maps')
+    st.write("Explore my city interactive map series. Select a city and click on the drop-down menu to see related projects!")
+    st.write("---")
+    
+    # Create columns for the city cards
+    nyc_col, hk_col, _, _ = st.columns([1, 1, 2, 2])
 
+    with nyc_col:
+        st.markdown("#### New York City")
+        st.image("images/nyc.jpg") 
+        with st.expander("View NYC Maps"):
+            st.write("**Citi Bike Dashboard:**")
+            st.markdown(
+                """<a href="/Citibike_Data_Dashboard" target="_self"><em>🔗 View Dashboard</em></a>""",
+                unsafe_allow_html=True
+            )
+            st.write("**Citi Bike Holiday Ridership Analysis:**")
+            st.markdown(
+                """<a href="/Holiday_Ridership_Compare" target="_self"><em>🔗 View Analysis</em></a>""",
+                unsafe_allow_html=True
+            )
+
+            
+
+    with hk_col:
+        st.markdown("#### Hong Kong")
+        st.image("images/hong_kong.jpg")
+        with st.expander("View Hong Kong Maps"):
+            st.write("**Street Density Near Airbnb Units:**")
+            st.markdown(
+                """<a href="/Airbnb_Street_Density_Map" target="_self"><em>🔗 View Map</em></a>""",
+                unsafe_allow_html=True
+            )
+            st.write("**Interactive Real Estate Map:**")
+            st.markdown(
+                """<a href="/Hongkong_Real_Estate" target="_self"><em>🔗 View Map</em></a>""",
+                unsafe_allow_html=True
+            )
+            st.write("**Overture Places POI Map:**")
+            st.markdown(
+                """<a href="/OvertureMap_POI" target="_self"><em>🔗 Search All Real-World Entities</em></a>""",
+                unsafe_allow_html=True
+            )
+            st.write("**7-Eleven Store Locations:**")
+            st.markdown(
+                """<a href="/SevenEleven" target="_self"><em>🔗 View Map</em></a>""",
+                unsafe_allow_html=True
+            )
+            st.write("**Population Distribution (H3 Grid):**")
+            st.markdown(
+                """<a href="/Hongkong_Population_Distribution" target="_self"><em>🔗 View Map</em></a>""",
+                unsafe_allow_html=True
+            )
+            st.write("**Coffee Shops (Foursquare POI):**")
+            st.markdown(
+                """<a href="/Foursquare_POI" target="_self"><em>🔗 View Map</em></a>""",
+                unsafe_allow_html=True
+            )
+    # # Interactive Map Section with Link to map.py
+    # st.subheader('🗺️ Interactive Maps')
+    # st.write("""
+    # For a more interactive experience, explore my interactive map series:
+    # """)
+    # st.markdown(
+    #     """<a href="/Citibike_Data_Dashboard" target="_self"><em>🔗 View NYC's Citi Bike Data Dashboard</em></a>""",
+    #     unsafe_allow_html=True
+    # )
+    # st.markdown(
+    #     """<a href="/Airbnb_Street_Density_Map" target="_self"><em>🔗 View Street Density Near Airbnb Units</em></a>""",
+    #     unsafe_allow_html=True
+    # )
+    # st.markdown(
+    #     """<a href="/Hongkong_Real_Estate" target="_self"><em>🔗 View Interactive Hong Kong Housing Map</em></a>""",
+    #     unsafe_allow_html=True
+    # )
+    # st.markdown(
+    #     """<a href="/OvertureMap_POI" target="_self"><em>🔗 Search All Real-World Entities Sourced By The Overture Places Data</em></a>""",
+    #     unsafe_allow_html=True
+    # )
+    # st.markdown(
+    #     """<a href="/SevenEleven" target="_self"><em>🔗 View Interactive Hong Kong 7-11 Stores Map</em></a>""",
+    #     unsafe_allow_html=True
+    # )
+    # st.markdown(
+    #     """<a href="/Hongkong_Population_Distribution" target="_self"><em>🔗 View HongKong Population Distribution in H3 Grid</em></a>""",
+    #     unsafe_allow_html=True
+    # )
+
+    # st.markdown(
+    #     """<a href="/Foursquare_POI" target="_self"><em>🔗 View HongKong Coffee Shops With Foursquare POI Data</em></a>""",
+    #     unsafe_allow_html=True
+    # )
+    
     # Static GIS Maps Portfolio Section with Expander
     with st.expander('📊 Static GIS Maps Portfolio'):
         st.write("""
@@ -154,56 +248,21 @@ with st.container():
         )
         st.write("(Click on the link for a detailed view of my GIS maps.)")
 
-    # Interactive Map Section with Link to map.py
-    st.subheader('🗺️ Interactive Maps')
-    st.write("""
-    For a more interactive experience, explore my interactive map series:
-    """)
-    st.markdown(
-        """<a href="/Citibike_Data_Dashboard" target="_self"><em>🔗 View NYC's Citi Bike Data Dashboard</em></a>""",
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """<a href="/Airbnb_Street_Density_Map" target="_self"><em>🔗 View Street Density Near Airbnb Units</em></a>""",
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """<a href="/Hongkong_Real_Estate" target="_self"><em>🔗 View Interactive Hong Kong Housing Map</em></a>""",
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """<a href="/OvertureMap_POI" target="_self"><em>🔗 Search All Real-World Entities Sourced By The Overture Places Data</em></a>""",
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """<a href="/SevenEleven" target="_self"><em>🔗 View Interactive Hong Kong 7-11 Stores Map</em></a>""",
-        unsafe_allow_html=True
-    )
-    st.markdown(
-        """<a href="/Hongkong_Population_Distribution" target="_self"><em>🔗 View HongKong Population Distribution in H3 Grid</em></a>""",
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-        """<a href="/Foursquare_POI" target="_self"><em>🔗 View HongKong Coffee Shops With Foursquare POI Data</em></a>""",
-        unsafe_allow_html=True
-    )
-    
     # Javascript Portfolio Site Section with Expander
-    st.subheader('💻 Javascript Portfolio Site')
-    st.write("""
-    Discover my work in front-end development using Javascript, including dynamic web applications and interactive visualizations.
-    """)
+    # st.subheader('💻 Javascript Portfolio Site')
+    # st.write("""
+    # Discover my work in front-end development using Javascript, including dynamic web applications and interactive visualizations.
+    # """)
 
-    with st.expander('🛠️ Explore Javascript Projects'):
-        st.write("""
-        You can explore my Javascript projects hosted on my portfolio site below:
-        """)
-        st.markdown(
-            """<a href="https://portfoliosite-production-ca19.up.railway.app/" target="_blank"><em>🔗 Visit My Javascript Portfolio Site</em></a>""",
-            unsafe_allow_html=True
-        )
-        st.write("(Click on the link to view my Javascript projects and web applications.)")
+    # with st.expander('🛠️ Explore Javascript Projects'):
+    #     st.write("""
+    #     You can explore my Javascript projects hosted on my portfolio site below:
+    #     """)
+    #     st.markdown(
+    #         """<a href="https://portfoliosite-production-ca19.up.railway.app/" target="_blank"><em>🔗 Visit My Javascript Portfolio Site</em></a>""",
+    #         unsafe_allow_html=True
+    #     )
+    #     st.write("(Click on the link to view my Javascript projects and web applications.)")
 
 
 
