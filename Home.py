@@ -39,7 +39,7 @@ info = {
     "Name": "Calvin",
     "Full_Name": "Calvin Luo",
     "Intro": "A passionate geospatial professional with a focus on geospatial data analytics, data engineering, visualization, and interactive web mapping.",
-    "About": "Hey everyone, thanks for stopping by! Please feel free to explore my site. If you are interested, make sure to cehck out the interactive maps I cerated here! Thank you all!",
+    "About": "Hey everyone, thanks for stopping by! Please feel free to explore my site. If you are interested, check out the interactive maps I created here! Thank you all!",
     "Photo": "<img src='images/profile.jpeg' width='200' />",
     "Medium": "https://medium.com/@yourusername",
     "Email": "calvinluozhengpei@gmail.com",
@@ -169,7 +169,7 @@ with st.container():
             
 
     with hk_col:
-        st.markdown("#### Hong Kong")
+        st.markdown("#### Hong Kong City")
         st.image("images/hong_kong.jpg")
         with st.expander("View Hong Kong Maps"):
             st.write("**Street Density Near Airbnb Units:**")
